@@ -1,0 +1,6 @@
+/node_modules
+/dist
+default.ts
+default.js
+/config/default.ts
+.env
