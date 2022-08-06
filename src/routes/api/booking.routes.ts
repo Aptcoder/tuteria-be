@@ -20,4 +20,7 @@ bookingRouter.post('/', validateRequest(createBookingBodySchema),
 
 bookingRouter.get('/:orderId', validateRequest(null, getBookingParamsSchema),
     bookingController.getBooking.bind(bookingController))
+
+bookingRouter.get('/:orderId/total_amount', validateRequest(null, getBookingParamsSchema),
+    bookingController.getBookingTotalAmount.bind(bookingController))
 export default bookingRouter

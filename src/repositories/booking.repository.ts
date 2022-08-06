@@ -21,7 +21,6 @@ export default class BookingRepository implements IBookingRepository {
     }
 
     async findById(orderId: string): Promise<IBooking | undefined> {
-        console.log('here', orderId)
         const booking = await Booking.findOne({
             where: { orderId: orderId },
             relations: ['users']

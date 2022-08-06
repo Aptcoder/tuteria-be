@@ -19,7 +19,7 @@ export class UserController {
             return res.status(201).send({
                 message: 'Successfully created user',
                 status: 'success',
-                user
+                data: { user }
             })
         } catch (err: any) {
             return processError(res, err)
@@ -32,7 +32,7 @@ export class UserController {
             return res.send({
                 message: 'All users',
                 status: 'success',
-                users
+                data: { users }
             })
         } catch (err: any) {
             return processError(res, err)

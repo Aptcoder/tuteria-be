@@ -33,9 +33,12 @@ describe('Booking tests', () => {
         expect(res.status).toBe(201)
         expect(res.body).toMatchObject({
             status: 'success',
-            booking: expect.objectContaining({
-                description: 'Sample description'
+            data: expect.objectContaining({
+                booking: expect.objectContaining({
+                    description: 'Sample description'
+                })
             })
+
         })
     })
 
@@ -51,8 +54,10 @@ describe('Booking tests', () => {
         expect(res.status).toBe(201)
         expect(res.body).toMatchObject({
             status: 'success',
-            booking: expect.objectContaining({
-                description: 'Sample description'
+            data: expect.objectContaining({
+                booking: expect.objectContaining({
+                    description: 'Sample description'
+                })
             })
         })
     })
@@ -63,9 +68,12 @@ describe('Booking tests', () => {
         expect(res.status).toBe(200)
         expect(res.body).toMatchObject({
             status: 'success',
-            bookings: expect.arrayContaining([expect.objectContaining({
-                description: "Sample description"
-            })])
+            data: expect.objectContaining({
+                bookings: expect.arrayContaining([expect.objectContaining({
+                    description: "Sample description"
+                })])
+            })
+
         })
     })
 

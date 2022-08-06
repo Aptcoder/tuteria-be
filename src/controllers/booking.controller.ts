@@ -18,7 +18,7 @@ export class BookingController {
             return res.status(201).send({
                 message: 'Created booking',
                 status: 'success',
-                booking,
+                data: { booking },
             })
         } catch (err: any) {
             return processError(res, err)
@@ -31,7 +31,7 @@ export class BookingController {
             return res.send({
                 message: 'All bookings',
                 status: 'success',
-                bookings
+                data: { bookings }
             }
             )
         } catch (err: any) {
@@ -45,7 +45,23 @@ export class BookingController {
             return res.send({
                 message: 'Booking',
                 status: 'success',
-                booking
+                data: { booking }
+            }
+            )
+        } catch (err: any) {
+            return processError(res, err)
+        }
+    }
+
+    public async getBookingTotalAmount(req: Request, res: Response, next: NextFunction) {
+        try {
+            const total_amount = await this.bookingService.calculateTotalAmountOnBooking(req.params.orderId)
+            return res.send({
+                message: 'Booking total amount',
+                status: 'success',
+                data: {
+                    total_amount
+                }
             }
             )
         } catch (err: any) {

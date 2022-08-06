@@ -39,4 +39,14 @@ export default class BookingService implements IBookingService {
         }
         return booking
     }
+
+    async calculateTotalAmountOnBooking(orderId: string): Promise<number> {
+        const booking = await this.bookingRepository.findById(orderId)
+        if (!booking) {
+            throw new NotFoundError('Booking not found')
+        }
+        const no_of_users = booking.users!.length
+        const total_amount = no_of_users * booking.amount
+        return total_amount
+    }
 }

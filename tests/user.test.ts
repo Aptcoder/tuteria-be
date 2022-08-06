@@ -27,9 +27,11 @@ describe('User tests', () => {
         expect(res.status).toBe(200)
         expect(res.body).toMatchObject({
             status: 'success',
-            users: expect.arrayContaining([expect.objectContaining({
-                email: expect.any(String)
-            })])
+            data: expect.objectContaining({
+                users: expect.arrayContaining([expect.objectContaining({
+                    email: expect.any(String)
+                })])
+            })
         })
     })
 

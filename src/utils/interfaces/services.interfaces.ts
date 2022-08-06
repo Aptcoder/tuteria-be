@@ -13,4 +13,5 @@ export interface IBookingService {
     createBooking(createBookingDto: CreateBookingDto): Promise<IBooking>
     findAllBookings(): Promise<IBooking[]>
     findBookingById(orderId: string): Promise<IBooking>
+    calculateTotalAmountOnBooking(orderId: string): Promise<number>
 }

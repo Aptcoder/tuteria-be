@@ -4,7 +4,6 @@ import { CreateUserDto } from '../dtos/users.dto'
 import { IBooking, IUser } from './entities.interfaces'
 
 export interface IUserRepository {
-    test: string,
     create(createUserDto: CreateUserDto): Promise<IUser>
     findAll(): Promise<IUser[]>
     findByIds(ids: number[]): Promise<IUser[]>

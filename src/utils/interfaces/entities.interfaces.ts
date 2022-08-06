@@ -11,5 +11,6 @@ export interface IBooking {
     description: string,
     start: string,
     end: string,
-    amount: number
+    amount: number,
+    users?: IUser[]
 }

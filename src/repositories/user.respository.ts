@@ -27,5 +27,4 @@ export default class UserRepository implements IUserRepository {
         return await User.find({})
     }
 
-    test = 'Hi there'
 }
