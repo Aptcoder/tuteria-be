@@ -77,4 +77,16 @@ describe('Booking tests', () => {
         })
     })
 
+    test('Get booking total amount', async () => {
+        const res = await request(app).get('/api/bookings/2VDOO2BDQA24/total_amount')
+
+        expect(res.status).toBe(200)
+        expect(res.body).toMatchObject({
+            status: 'success',
+            data: expect.objectContaining({
+                total_amount: 3000
+            })
+        })
+    })
+
 })

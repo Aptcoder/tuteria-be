@@ -11,7 +11,9 @@ export default (): Promise<void | Connection> => createConnection({
     logging: false
 })
     .then((connection) => {
-        console.log('Sucessfully connected to db')
+        if (process.env.NODE_ENV != "test") {
+            console.log('Sucessfully connected to db')
+        }
     })
     .catch((err) => {
         console.log('Could not connect to db', err)
