@@ -15,7 +15,7 @@ export class BookingController {
         const createBookingDto: CreateBookingDto = req.body
         try {
             const booking = await this.bookingService.createBooking(createBookingDto)
-            return res.send({
+            return res.status(201).send({
                 message: 'Created booking',
                 status: 'success',
                 booking,

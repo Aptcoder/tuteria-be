@@ -16,7 +16,7 @@ export class UserController {
         const createUserDto: CreateUserDto = req.body
         try {
             const user = await this.userService.createUser(createUserDto)
-            return res.send({
+            return res.status(201).send({
                 message: 'Successfully created user',
                 status: 'success',
                 user

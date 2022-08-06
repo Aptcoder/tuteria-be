@@ -2,7 +2,7 @@ import config from 'config';
 
 export default {
   type: 'sqlite',
-  database: 'tuteria.sqlite',
+  database: 'tuteria-test.sqlite',
   logging: false,
   entities: [
     'src/entities/**/*.{js,ts}'

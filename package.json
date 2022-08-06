@@ -4,7 +4,7 @@
     "description": "A wallet app for practice",
     "main": "app.js",
     "scripts": {
-        "test": "cross-env NODE_ENV=test && jest ./src/tests",
+        "test": "cross-env NODE_ENV=test && jest ./tests",
         "build:watch": "tsc --w",
         "build": "tsc",
         "typeorm": "ts-node ./node_modules/typeorm/cli.js",

@@ -15,8 +15,6 @@ export default class BookingRepository implements IBookingRepository {
         return booking.save()
     }
 
-    test = 'Hi there'
-
     async findAll(): Promise<IBooking[]> {
         const bookings = await Booking.find({})
         return bookings

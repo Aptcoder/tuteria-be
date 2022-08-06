@@ -11,7 +11,7 @@ const setup = async () => {
 
     await seeDb()
 
-    getConnection('q-wallet').close()
+    getConnection().close()
 }
 
 export default setup

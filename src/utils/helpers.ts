@@ -3,7 +3,6 @@ import { Response } from 'express'
 
 
 export const processError = (res: Response, error: any) => {
-    console.log('et', error)
     if (error.status) {
         return res.status(error.status).send({
             status: 'failed',

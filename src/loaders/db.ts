@@ -6,7 +6,7 @@ const entityPath = path.resolve(__dirname, '..', 'entities')
 
 export default (): Promise<void | Connection> => createConnection({
     type: 'sqlite',
-    database: 'tuteria.sqlite',
+    database: config.get<string>('database'),
     entities: [`${entityPath}/*.{js,ts}`],
     logging: false
 })

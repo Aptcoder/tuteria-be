@@ -4,7 +4,7 @@ import { IBookingService, IUserService } from '../utils/interfaces/services.inte
 import { Service, Inject } from 'typedi'
 import { IBooking, IUser } from '../utils/interfaces/entities.interfaces'
 import { CreateBookingDto } from '../utils/dtos/booking.dto'
-import { NotFoundError } from '../utils/errors'
+import { APIError, NotFoundError } from '../utils/errors'
 
 @Service('booking_service')
 export default class BookingService implements IBookingService {
@@ -16,7 +16,7 @@ export default class BookingService implements IBookingService {
     async createBooking(createBookingDto: CreateBookingDto): Promise<IBooking> {
         const users = await this.userRepository.findByIds(createBookingDto.users as number[])
         if (users.length < 1) {
-            throw new NotFoundError("None of the users exist")
+            throw new APIError("None of the users exist", 400)
         }
 
         const booking = await this.bookingRepository.create({
