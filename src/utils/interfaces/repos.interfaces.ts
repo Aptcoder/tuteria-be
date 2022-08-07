@@ -7,6 +7,7 @@ export interface IUserRepository {
     create(createUserDto: CreateUserDto): Promise<IUser>
     findAll(): Promise<IUser[]>
     findByIds(ids: number[]): Promise<IUser[]>
+    findByEmail(email: string): Promise<IUser | undefined>
 }
 
 export interface IBookingRepository {

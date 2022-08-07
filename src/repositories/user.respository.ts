@@ -27,4 +27,13 @@ export default class UserRepository implements IUserRepository {
         return await User.find({})
     }
 
+    async findByEmail(email: string): Promise<IUser | undefined> {
+        const user = await User.findOne({
+            where: {
+                email
+            }
+        })
+        return user
+    }
+
 }
